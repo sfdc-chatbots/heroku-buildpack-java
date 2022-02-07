@@ -2,7 +2,7 @@
 # bin/compile <build-dir> <cache-dir> <env-dir>
 
 # fail fast
-set -e
+set -e -x
 
 BPLOG_PREFIX="buildpack.java"
 
@@ -13,6 +13,8 @@ ENV_DIR=$3
 
 source $BP_DIR/lib/common.sh
 source $BP_DIR/lib/maven.sh
+echo $BUILDPACK_STDLIB_URL
+curl -s --retry 3 -L $BUILDPACK_STDLIB_URL
 source <(curl -s --retry 3 -L $BUILDPACK_STDLIB_URL)
 
 export_env $ENV_DIR "." "JAVA_OPTS|JAVA_TOOL_OPTIONS"
