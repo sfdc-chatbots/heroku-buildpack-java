@@ -2,7 +2,7 @@
 # bin/test-compile <build-dir> <cache-dir> <env-dir>
 
 # fail fast
-set -e
+set -e -x
 
 BPLOG_PREFIX="buildpack.java.ci"
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # fail fast
-set -e
+set -e -x
 
 appDir="$(pwd)"
 bpDir="$(cd $(dirname $0)/..; pwd)" # absolute path
