@@ -98,6 +98,7 @@ run_mvn() {
   fi
 
   local mvn_settings_opt="$(_mvn_settings_opt ${home} ${mavenInstallDir})"
+  env | grep MAVEN
   cat ${mvn_settings_opt}
 
   export MAVEN_OPTS="$(_mvn_java_opts ${scope} ${home} ${mavenInstallDir})"
